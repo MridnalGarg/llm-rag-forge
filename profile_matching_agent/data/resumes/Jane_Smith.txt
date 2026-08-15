@@ -1,0 +1,8 @@
+Jane Smith
+Software Engineer
+4 years of experience
+
+Skills: Java, Spring Boot, React, Kubernetes, PostgreSQL, Jenkins
+Experience:
+Developed Spring Boot microservices and React applications.
+Maintained Kubernetes deployments and CI/CD pipelines.

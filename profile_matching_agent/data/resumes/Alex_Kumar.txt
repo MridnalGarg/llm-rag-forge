@@ -1,0 +1,7 @@
+Alex Kumar
+Software Engineer
+2 years of experience
+
+Skills: React, JavaScript, Node.js, AWS
+Experience:
+Built React dashboards and Node.js APIs. Worked with AWS services.
