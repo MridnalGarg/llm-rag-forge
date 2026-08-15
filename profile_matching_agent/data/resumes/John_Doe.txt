@@ -1,0 +1,8 @@
+John Doe
+Senior Software Engineer
+5 years of experience
+
+Skills: Java, Spring Boot, React, AWS, Docker, PostgreSQL, Microservices
+Experience:
+Built Spring Boot microservices and React applications for enterprise systems.
+Deployed services on AWS and Docker. Worked on REST APIs and PostgreSQL.
