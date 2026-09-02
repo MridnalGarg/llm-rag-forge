@@ -1,12 +1,11 @@
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
-import os
 import pypdf
 import docx
 
 from config import BASE_DIR, SUPPORTED_RESUME_EXTENSIONS
-
+from mcp_system.filesystem_mcp_server import mcp
 
 def resolve_path(filepath: str) -> Path:
     path = Path(filepath).expanduser()
@@ -49,7 +48,7 @@ def read_file(filepath: str) -> dict:
     except Exception as exc:
         return {"status": "error", "message": str(exc)}
 
-
+@mcp.tool()
 def list_files(directory: str, extension: Optional[str] = None) -> list[dict]:
     directory_path = resolve_path(directory)
     if not directory_path.exists():
@@ -72,7 +71,7 @@ def list_files(directory: str, extension: Optional[str] = None) -> list[dict]:
         })
     return sorted(result, key=lambda item: item["filename"].lower())
 
-
+@mcp.tool()
 def search_in_file(filepath: str, keyword: str) -> dict:
     result = read_file(filepath)
     if result.get("status") == "error":
@@ -97,7 +96,7 @@ def search_in_file(filepath: str, keyword: str) -> dict:
         "matches": matches,
     }
 
-
+@mcp.tool()
 def write_file(filepath: str, content: str) -> dict:
     path = resolve_path(filepath)
     path.parent.mkdir(parents=True, exist_ok=True)
